@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: z415hf3de-nodejs-gitops
+  description: This is GitOps manifest for z415hf3de-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=z415hf3de-nodejs
+    backstage.io/kubernetes-id: z415hf3de-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: z415hf3de-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:z415hf3de-nodejs
